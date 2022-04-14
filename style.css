@@ -7,14 +7,17 @@
 }
 .toptxt{
     padding: 40px 0 40px 0;
-    text-align: center;
+    /* text-align: center; */
     font-family: 'Open Sans';
     font-size: 1.7rem;
     font-weight: bold;
 }
 .toptxt2{
     padding: 40px 0 40px 0;
-    text-align: center;
+    /* text-align: center; */
     font-size: 1.3rem;
     font-weight: normal;
+}
+.txtcenter{
+    text-align: center;
 }
