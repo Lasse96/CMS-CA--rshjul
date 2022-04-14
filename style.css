@@ -7,17 +7,44 @@
 }
 .toptxt{
     padding: 40px 0 40px 0;
-    /* text-align: center; */
     font-family: 'Open Sans';
     font-size: 1.7rem;
     font-weight: bold;
 }
 .toptxt2{
-    padding: 40px 0 40px 0;
-    /* text-align: center; */
     font-size: 1.3rem;
     font-weight: normal;
+    padding-bottom: 30px;
 }
 .txtcenter{
+    padding-left: 25px;
+    max-width: 337px;
+}
+.filter{
+    background-color: red;
+    color: white;
+    border: 1px solid red;
+    padding: 3px 15px 3px 15px;
+    margin: 20px 0 0 25px;
+    font-size: 1rem;
+}
+.divcalender{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.calenderbox{
+    border: 1px solid whitesmoke;
+    padding: 15px;
+    background-color: whitesmoke;
+    margin-left: 25px;
+    border-radius: 7px;
+}
+.p1{
+    font-size: 2rem;
+    text-align: center;
+}
+.p2{
+    font-size: 1.6rem;
     text-align: center;
 }
