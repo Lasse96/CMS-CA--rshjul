@@ -3,14 +3,16 @@ const url = "https://lassestrand.no/wp-json/tribe/events/v1/events";
 
 fetch(url)
  .then (respons => respons.json())
- .then (events => listEvents(events))
+ .then (events => listEvents(events.events))
  .catch((error) => {
      console.error('Error:', error);
 });
 
 function listEvents (events) {
-    console.log(events.events[1].title
-        );
+    let myList = "";
+    for (let event of events) {
+        console.log(event.title);
+    }
 }
 
 // function listEvents (events) {
@@ -27,4 +29,3 @@ function listEvents (events) {
 //     output.innerHTML = myList;
 // }
 
-[0].title
