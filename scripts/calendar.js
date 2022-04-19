@@ -9,7 +9,8 @@ fetch(url)
 });
 
 function listEvents (events) {
-    console.log(events.events);
+    console.log(events.events[1].title
+        );
 }
 
 // function listEvents (events) {
@@ -26,3 +27,4 @@ function listEvents (events) {
 //     output.innerHTML = myList;
 // }
 
+[0].title
