@@ -1,49 +1,89 @@
+:root {
+ --font1: 'Open Sans', 'Helvetica Neue', sans-serif;
+ --font2: 'Montserrat', sans-serif;
+ 
+ --red-color: red;
+ --background-color: rgb(211, 211, 211);
+ --gray-color: whitesmoke;
+}
+
 *{
     margin: 0;
     padding: 0;
 }
-#headimg{
+
+#heading{
     width: 100%;
 }
+
+.p1,
+.p2,
+.toptxt {
+    font-family: var(--font1);
+}
+
+a,
+p,
+.toptxt2 {
+    font-family: var(--font2);
+}
+
 .toptxt{
-    padding: 40px 0 40px 0;
-    font-family: 'Open Sans';
-    font-size: 1.7rem;
-    font-weight: bold;
+    padding: 30px 0;
+    font-size: 1.6rem;
 }
+
 .toptxt2{
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: normal;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
+    position: relative;
 }
+
+.toptxt2::after {
+    content: '';
+    background-color: var(--background-color);
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
 .txtcenter{
-    padding-left: 25px;
-    max-width: 337px;
+    padding: 0 10px;
 }
-.filter{
-    background-color: red;
+
+.filter-button{
+    background-color: var(--red-color);
     color: white;
-    border: 1px solid red;
-    padding: 3px 15px 3px 15px;
-    margin: 20px 0 0 25px;
+    border: 1px solid var(--red-color);
+    padding: 3px 15px;
+    margin: 20px 10px;
     font-size: 1rem;
 }
+
 .divcalender{
     margin-top: 20px;
     display: flex;
     flex-direction: row;
 }
+
 .calenderbox{
-    border: 1px solid whitesmoke;
+    border: 1px solid var(--gray-color);
     padding: 15px;
-    background-color: whitesmoke;
-    margin-left: 25px;
+    background-color: var(--gray-color);
+    margin-left: 10px;
     border-radius: 7px;
 }
+
+
+
 .p1{
     font-size: 2rem;
     text-align: center;
 }
+
 .p2{
     font-size: 1.6rem;
     text-align: center;
