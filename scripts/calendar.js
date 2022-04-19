@@ -13,6 +13,8 @@ function listEvents (events) {
     for (let event of events) {
         console.log(event.title);
         myList += `
+        <h3>${event.start_date_details.day}</h3>
+        <p>${event.start_date_details.month}</p>
         <p>${event.title}</p>`
     }
     console.log(myList);
