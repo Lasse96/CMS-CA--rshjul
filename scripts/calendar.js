@@ -1,4 +1,4 @@
-const output = document.querySelector(".test");
+const output = document.getElementById("test");
 const url = "https://lassestrand.no/wp-json/tribe/events/v1/events";
 
 fetch(url)
@@ -12,20 +12,9 @@ function listEvents (events) {
     let myList = "";
     for (let event of events) {
         console.log(event.title);
+        myList += `
+        <p>${event.title}</p>`
     }
+    console.log(myList);
+    output.innerHTML = myList;
 }
-
-// function listEvents (events) {
-//     let myList = "";
-//     for (let event of events) {
-//         console.log(event);
-//         myList += `
-//             <a href="product.html?id=${event.id}">
-//                 ${event.name}
-//             </a>`;
-//         console.log(event.name);
-//     }
-//     console.log(myList);
-//     output.innerHTML = myList;
-// }
-
