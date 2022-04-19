@@ -63,30 +63,3 @@ p,
     font-size: 1rem;
 }
 
-.divcalender{
-    margin-top: 20px;
-    display: flex;
-    flex-direction: row;
-}
-
-.calenderbox{
-    border: 1px solid var(--gray-color);
-    padding: 15px;
-    background-color: var(--gray-color);
-    margin-left: 10px;
-    border-radius: 7px;
-}
-
-/* .calenderinfo {
-    
-} */
-
-.p1{
-    font-size: 2rem;
-    text-align: center;
-}
-
-.p2{
-    font-size: 1.6rem;
-    text-align: center;
-}

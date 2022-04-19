@@ -13,7 +13,7 @@ function listEvents (events) {
     for (let event of events) {
         console.log(event.title);
         myList += `
-        <div>
+        <div class="calendarbox">
             <h3>${event.start_date_details.day}</h3>
             <p>${event.start_date_details.month}</p>
         </div>
