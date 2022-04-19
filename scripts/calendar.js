@@ -1,4 +1,4 @@
-const output = document.getElementById("test");
+const output = document.querySelector(".divcalendar");
 const url = "https://lassestrand.no/wp-json/tribe/events/v1/events";
 
 fetch(url)
