@@ -1,5 +1,5 @@
 const output = document.querySelector(".test");
-const url = "http://lassestrand.no/wp-json/tribe/events/v1/events";
+const url = "https://lassestrand.no/wp-json/tribe/events/v1/events";
 
 fetch(url)
  .then (respons => respons.json())
