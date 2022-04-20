@@ -49,6 +49,8 @@
     border: none;
     font-size: 1rem;
     padding: 10px 0;
+    width: 100%;
+    text-align: left;
 }
 
 .selection-container > * {
