@@ -1,0 +1,7 @@
+.filter{
+    background-color: whitesmoke;
+}
+.menus{
+    display: flex;
+    flex-direction: column;
+}

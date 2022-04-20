@@ -11,16 +11,17 @@ fetch(url)
 function listEvents (events) {
     let myList = "";
     for (let event of events) {
-        console.log(event.title);
+        var date = (new Date(event.start_date.replace(/-/g, "/")));
+        console.log(event);
         myList += `
         <div class="calendarbox">
             <h3>${event.start_date_details.day}</h3>
-            <p>${event.start_date_details.month}</p>
+            <p>${date.toLocaleString('default', { month: 'short' })}</p>
         </div>
         <div>
             <p>${event.title}</p>
         </div>`
     }
-    console.log(myList);
+    // console.log(myList);
     output.innerHTML = myList;
 }
