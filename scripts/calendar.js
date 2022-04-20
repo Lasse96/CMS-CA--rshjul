@@ -14,16 +14,17 @@ function listEvents (events) {
         var date = (new Date(event.start_date.replace(/-/g, "/")));
         console.log(event);
         myList += `
-        <div class="calflex">
+        <div class="cal-flex">
             <div class="calendarbox">
                 <h3>${event.start_date_details.day}</h3>
                 <p>${date.toLocaleString('default', { month: 'short' })}</p>
             </div>
-            <div>
-                <p>${event.title}</p>
+            <div class="cal-title">
+                <h4>${event.title}</h4>
+                <p>${event.description}</p>
             </div>
         </div>`
     }
-    // console.log(myList);
+    console.log(myList);
     output.innerHTML = myList;
 }
