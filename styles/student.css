@@ -1,8 +1,9 @@
 .filter-container {
     background-color: #f5f5f5;
     padding: 20px;
-    height: 400px;
+    height: 550px;
     min-width: 250px;
+    margin-bottom: 10px; /*Kun for oversikt under produksjon*/
 }
 
 .rolle {
@@ -44,7 +45,8 @@
     margin: 40px 0;
 }
 
-.selection-btn {
+.selection-btn,
+.back-btn {
     background-color: transparent;
     border: none;
     font-size: 1rem;
@@ -80,7 +82,7 @@
     display: flex;
     justify-content: center;
     position: relative;
-    bottom: -110px;
+    bottom: -220px;
 }
 
 #vis-resultater > button {
@@ -90,4 +92,15 @@
     height: 30px;
     width: 150px;
     font-size: 1rem;
+}
+
+/* Studier */
+
+.back-btn {
+    text-align: right;
+}
+
+.back-btn::before {
+    content: "<";
+    margin-right: 2px;
 }
