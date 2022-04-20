@@ -1,7 +1,15 @@
 .filter{
-    background-color: whitesmoke;
+    background-color: #f5f5f5;
+    padding: 20px;
+    height: 400px;
+    min-width: 250px;
 }
 .menus{
     display: flex;
     flex-direction: column;
+}
+.ansatt{
+    background-color: red;
+    border: none;
+    color: white;
 }
