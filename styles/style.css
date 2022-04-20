@@ -65,5 +65,28 @@ h4 {
     font-size: 1rem;
 }
 
-/* Calender */
+/* Calendar */
 
+.divcalendar {
+    margin: 0 10px;
+}
+
+.calendarbox {
+    background-color: var(--gray-color);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.calendarbox h3 {
+    font-size: 1.5rem;
+}
+
+.calendarbox p {
+    font-size: 1.1rem;
+    text-transform: capitalize;
+}
