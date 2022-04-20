@@ -1,29 +1,40 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ansatt</title>
     <link rel="stylesheet" href="./styles/ansatt.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Student</title>
 </head>
 <body>
-    <div class="filter">
-        <div class="drag"></div>
-        <div class="stuans">
-            <button class="student">Student</button>
-            <button class="ansatt">Ansatt</button>
+    <section class="filter-container">
+        <div class="rolle">
+            <button class="rolle-student">Student</button>
+            <button class="rolle-ansatt">Ansatt</button>
         </div>
-        <div class="menus">
-            <button class="menubut">Roller</button>
-            <button class="menubut">Kvalitetsarbeid</button>
-            <button class="menubut">Type</button>
-            <button class="menubut">Studiested</button>
-            <button class="menubut">Måned</button>
+        <div class="selection-container">
+            <div id="roller">
+                <button class="selection-btn">Roller</button>
+                <div class="arrow"></div>
+            </div>
+            <div id="studiested">
+                <button class="selection-btn">Studiested</button>
+                <div class="arrow"></div>
+            </div>
+            <div id="måned">
+                <button class="selection-btn">Måned</button>
+                <div class="arrow"></div>
+            </div>
+            <div id="Type">
+                <button class="selection-btn">Type</button>
+                <div class="arrow"></div>
+            </div>
         </div>
-        <div>
-            <button class="results">Vis Resultater</button>
+
+        <div id="vis-resultater">
+            <button>Vis Resultater</button>
         </div>
-    </div>
+    </section>
 </body>
 </html>
