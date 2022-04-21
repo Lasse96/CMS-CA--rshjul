@@ -33,8 +33,7 @@ function showcontainer() {
    var show = document.querySelector(".filter-container");
    if (show.style.display === "none") {
        show.style.display = "block";
-   } 
-   else {
+   } else {
        show.style.display = "none";
    }
 }
