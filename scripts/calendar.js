@@ -28,3 +28,13 @@ function listEvents (events) {
     console.log(myList);
     output.innerHTML = myList;
 }
+
+function showcontainer() {
+   var show = document.querySelector(".filter-container");
+   if (show.style.display === "none") {
+       show.style.display = "block";
+   } 
+   else {
+       show.style.display = "none";
+   }
+}
