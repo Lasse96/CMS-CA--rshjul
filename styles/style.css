@@ -112,7 +112,8 @@ h4 {
     padding: 10px;
     height: 550px;
     min-width: 250px;
-    position: relative;
+    position: fixed;
+    bottom: 0;
     width: 100%;
     margin-top: -100%;
 }
