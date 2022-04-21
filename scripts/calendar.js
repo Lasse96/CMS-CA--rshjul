@@ -33,7 +33,7 @@ function listEvents (events) {
 
 const filterbutton = document.querySelector(".filter-button");
 const showcont = document.querySelector(".filter-container");
-const showmnd = document.querySelector(".filter-måned");
+const showmnd = document.querySelector(".måned-select");
 const showStud = document.querySelector(".student-select");
 const showAns = document.querySelector(".ansatt-select");
 const showStudies = document.querySelector(".studie-select");
