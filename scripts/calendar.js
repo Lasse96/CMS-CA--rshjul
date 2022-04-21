@@ -29,7 +29,7 @@ function listEvents (events) {
     output.innerHTML = myList;
 }
 
-// Filter -------------------------------------------------------------
+// Menu -------------------------------------------------------------
 
 const filterbutton = document.querySelector(".filter-button");
 const showcont = document.querySelector(".filter-container");
