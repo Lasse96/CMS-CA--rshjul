@@ -29,14 +29,27 @@ function listEvents (events) {
     output.innerHTML = myList;
 }
 
+
+
 var filterbutton = document.querySelector(".filter-button")
 
 filterbutton.addEventListener("click",
 function showcontainer() {
-   var show = document.querySelector(".filter-container");
-   if (show.style.display === "none") {
-       show.style.display = "block";
+   var showcont = document.querySelector(".filter-container");
+   if (showcont.style.display === "none") {
+       showcont.style.display = "block";
    } else {
-       show.style.display = "none";
+       showcont.style.display = "none";
    }
-});
+}
+);
+
+function showmaned() {
+    var showmnd = document.querySelector(".filter-måned")
+    if (showmnd.style.display === "none") {
+        showmnd.style.display = "block";
+        console.log(showmaned);
+    } else {
+        showmnd.style.display = "none";
+    }
+};
