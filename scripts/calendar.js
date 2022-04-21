@@ -62,3 +62,8 @@ function showAnsatt() {
         showAns.style.display = "block";
     }
 }
+
+function showStudent() {
+    var showStud = document.querySelector(".student-select");
+    if (showStud)
+}
