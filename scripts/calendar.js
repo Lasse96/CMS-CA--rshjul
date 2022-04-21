@@ -29,6 +29,9 @@ function listEvents (events) {
     output.innerHTML = myList;
 }
 
+var filterbutton = document.querySelector(".filter-button")
+
+filterbutton.addEventListener("click",
 function showcontainer() {
    var show = document.querySelector(".filter-container");
    if (show.style.display === "none") {
@@ -36,4 +39,4 @@ function showcontainer() {
    } else {
        show.style.display = "none";
    }
-}
+});
