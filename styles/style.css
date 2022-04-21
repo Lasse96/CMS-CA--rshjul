@@ -294,3 +294,7 @@ input[type=checkbox]:checked:after {
 .ansatt-select {
     background-color: none;
 }
+
+.student-select {
+    display: none;
+}

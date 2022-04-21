@@ -59,11 +59,15 @@ function showAnsatt() {
     if (showAns.style.display === "none") {
         showAns.style.display = "block";
     } else {
-        showAns.style.display = "block";
+        showAns.style.display = "none";
     }
 }
 
 function showStudent() {
     var showStud = document.querySelector(".student-select");
-    if (showStud)
+    if (showStud.style.display === "none") {
+        showStud.style.display = "block";        
+    } else {
+        showStud.style.display = "none"
+    }
 }
