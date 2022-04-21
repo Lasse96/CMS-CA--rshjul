@@ -12,7 +12,7 @@ function listEvents (events) {
     let myList = "";
     for (let event of events) {
         var date = (new Date(event.start_date.replace(/-/g, "/")));
-        console.log(event);
+        // console.log(event);
         myList += `
         <div class="cal-flex">
             <div class="calendarbox">
@@ -25,7 +25,7 @@ function listEvents (events) {
             </div>
         </div>`
     }
-    console.log(myList);
+    // console.log(myList);
     output.innerHTML = myList;
 }
 
@@ -48,7 +48,7 @@ function showmaned() {
     var showmnd = document.querySelector(".filter-måned")
     if (showmnd.style.display === "none") {
         showmnd.style.display = "block";
-        console.log(showmaned);
+        // console.log(showmaned);
     } else {
         showmnd.style.display = "none";
     }
