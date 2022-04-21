@@ -22,6 +22,221 @@
 
     <div class="divcalendar"></div>
 
+        <!-- Filter Student -->
+
+        <section class="filter-container student-select">
+            <div class="rolle">
+                <button class="rolle-student">Student</button>
+                <button class="rolle-ansatt" onclick="showAnsatt()">Ansatt</button>
+            </div>
+            <div class="selection-container">
+                <div id="studie">
+                    <button class="selection-btn" onclick="showStudie()">Studie</button>
+                    <div class="arrow"></div>
+                </div>
+                <div id="studiested">
+                    <button class="selection-btn" onclick="showStudiested()">Studiested</button>
+                    <div class="arrow"></div>
+                </div>
+                <div id="måned">
+                    <button class="selection-btn" onclick="showmaned()">Måned</button>
+                    <div class="arrow"></div>
+                </div>
+                <div id="type">
+                    <button class="selection-btn" onclick="showType()">Type</button>
+                    <div class="arrow"></div>
+                </div>
+            </div>
+    
+            <div id="vis-resultater">
+                <button class="filter-button">Vis Resultater</button>
+            </div>
+        </section>
+    
+        <section class="filter-container studie-select">
+            <button class="back-btn" onclick="backToMenu()">Tilbake</button>
+            <button class="selection-btn">Frontend-utvikling</button>
+            <button class="selection-btn">Backend-utvikling</button>
+            <button class="selection-btn">Data Analyst</button>
+            <button class="selection-btn">UX-Design</button>
+            <button class="selection-btn">UI-Desgin</button>
+            <button class="selection-btn">Grafisk Design</button>
+            <button class="selection-btn">Filmproduksjon</button>
+            <button class="selection-btn">Digital prototyping</button>
+            <button class="selection-btn">Teknisk design med DAK 2D/3D</button>
+            <button class="selection-btn">Digital Markedsføring</button>
+            <button class="selection-btn">Videomarkedsføring i sosiale medier</button>
+            <button class="selection-btn">3D design og spillteknologi</button>
+        </section>
+    
+    
+        <!-- Filter Ansatt -->
+    
+        <section class="filter-container ansatt-select">
+            <div class="rolle">
+                <button class="rolle-student2" onclick="showStudent()">Student</button>
+                <button class="rolle-ansatt2">Ansatt</button>
+            </div>
+            <div class="selection-container">
+                <div id="roller">
+                    <button class="selection-btn" onclick="showRolle()">Roller</button>
+                    <div class="arrow"></div>
+                </div>
+                <div id="kvalitetsarbeid">
+                    <button class="selection-btn" onclick="showKvalArb()">Kvalitetsarbeid</button>
+                    <div class="arrow"></div>
+                </div>
+                <div id="studiested">
+                    <button class="selection-btn" onclick="showStudiested()">Studiested</button>
+                    <div class="arrow"></div>
+                </div>
+                <div id="måned">
+                    <button class="selection-btn" onclick="showmaned()">Måned</button>
+                    <div class="arrow"></div>
+                </div>
+                <div id="Type">
+                    <button class="selection-btn" onclick="showType()">Type</button>
+                    <div class="arrow"></div>
+                </div>
+            </div>
+    
+            <div id="vis-resultater">
+                <button>Vis Resultater</button>
+            </div>
+        </section>
+    
+        <section class="filter-container rolle-select">
+            <button class="back-btn" onclick="backToMenu()">Tilbake</button>
+            <button class="selection-btn">Rektor</button>
+            <button class="selection-btn">Prorektor (stedbasert utdanning)</button>
+            <button class="selection-btn">Prorektor (nettbasert utdanning)</button>
+            <button class="selection-btn">Leder programutvikling</button>
+            <button class="selection-btn">Leder pedagogisk utvikling</button>
+            <button class="selection-btn">Linjeleder</button>
+            <button class="selection-btn">Faglig ansvarlig</button>
+            <button class="selection-btn">Emneansvarlig</button>
+            <button class="selection-btn">Faglærer</button>
+        </section>
+    
+        <section class="filter-container kvalitetsarbeid-select">
+            <button class="back-btn" onclick="backToMenu()">Tilbake</button>
+                <div>
+                    <div class="checkfilter">
+                        <p class="pfilter">Styrebeslutninger</p>
+                        <input type="checkbox" name="styrebeslutninger" id="styrebeslutninger" class="checkbox">
+                    </div>
+                    <div class="checkfilter">
+                        <p class="pfilter">Datainnhenting</p>
+                        <input type="checkbox" name="datainnhenting" id="datainnhenting" class="checkbox">
+                    </div>
+                    <div class="checkfilter">
+                        <p class="pfilter">Kvalitetsrapporter og planlegging</p>
+                        <input type="checkbox" name="kvalitetsrapporter og planlegging" id="kvalitetsrapporter" class="checkbox">
+                    </div>
+                    <div class="checkfilter">
+                        <p class="pfilter">Rekruttering og utvikling</p>
+                        <input type="checkbox" name="rekruttering og utvikling" id="rekruttering" class="checkbox">
+                    </div>
+                </div>
+        </section>
+    
+        <!-- Filter Felles -->
+    
+        <section class="filter-container filter-måned">
+            <button class="back-btn" onclick="backToMenu()">Tilbake</button>
+            <div>
+                <div class="checkfilter">
+                    <p class="pfilter">Januar</p>
+                    <input type="checkbox" name="januar" id="januar" class="checkbox">
+                </div>
+                <div class="checkfilter">
+                    <p class="pfilter">Februar</p>
+                    <input type="checkbox" name="februar" id="februar" class="checkbox">
+                </div>
+                <div class="checkfilter">
+                    <p class="pfilter">Mars</p>
+                    <input type="checkbox" name="mars" id="mars" class="checkbox">
+                </div>
+                <div class="checkfilter">
+                    <p class="pfilter">April</p>
+                    <input type="checkbox" name="april" id="april" class="checkbox">
+                </div>
+                <div class="checkfilter">
+                    <p class="pfilter">Mai</p>
+                    <input type="checkbox" name="mai" id="mai" class="checkbox">
+                </div>
+                <div class="checkfilter">
+                    <p class="pfilter">Juni</p>
+                    <input type="checkbox" name="juni" id="juni" class="checkbox">
+                </div>
+                <div class="checkfilter">
+                    <p class="pfilter">Juli</p>
+                    <input type="checkbox" name="juli" id="juli" class="checkbox">
+                </div>
+                <div class="checkfilter">
+                    <p class="pfilter">August</p>
+                    <input type="checkbox" name="august" id="august" class="checkbox">
+                </div>
+                <div class="checkfilter">
+                    <p class="pfilter">September</p>
+                    <input type="checkbox" name="september" id="september" class="checkbox">
+                </div>
+                <div class="checkfilter">
+                    <p class="pfilter">Oktober</p>
+                    <input type="checkbox" name="oktober" id="oktober" class="checkbox">
+                </div>
+                <div class="checkfilter">
+                    <p class="pfilter">November</p>
+                    <input type="checkbox" name="november" id="november" class="checkbox">
+                </div>
+                <div class="checkfilter">
+                    <p class="pfilter">Desember</p>
+                    <input type="checkbox" name="desember" id="desember" class="checkbox">
+                </div>
+            </div>
+        </section>
+    
+        <section class="filter-container studiested-select">
+            <button class="back-btn" onclick="backToMenu()">Tilbake</button>
+            <div>
+                <div class="checkfilter">
+                    <p class="pfilter">Oslo</p>
+                    <input type="checkbox" name="oslo" id="oslo" class="checkbox">
+                </div>
+                <div class="checkfilter">
+                    <p class="pfilter">Bergen</p>
+                    <input type="checkbox" name="bergen" id="bergen" class="checkbox">
+                </div>
+                <div class="checkfilter">
+                    <p class="pfilter">Stavanger</p>
+                    <input type="checkbox" name="stavanger" id="stavanger" class="checkbox">
+                </div>
+                <div class="checkfilter">
+                    <p class="pfilter">Kristiansand</p>
+                    <input type="checkbox" name="kristiansand" id="kristiansand" class="checkbox">
+                </div>
+                <div class="checkfilter">
+                    <p class="pfilter">Nettstudier</p>
+                    <input type="checkbox" name="nettstudier" id="nettstudier" class="checkbox">
+                </div>
+            </div>
+        </section>
+    
+        <section class="filter-container type-select">
+            <button class="back-btn" onclick="backToMenu()">Tilbake</button>
+            <div>
+                <div class="checkfilter">
+                    <p class="pfilter">Arrangementer</p>
+                    <input type="checkbox" name="arrangementer" id="arrangementer" class="checkbox">
+                </div>
+                <div class="checkfilter">
+                    <p class="pfilter">Frister</p>
+                    <input type="checkbox" name="frister" id="frister" class="checkbox">
+                </div>
+            </div>
+        </section>
+
+<!-- 
     <section class="filter-container student-select">
         <div class="rolle">
             <button class="rolle-student">Student</button>
@@ -136,6 +351,6 @@
                     <input type="checkbox" name="desember" id="desember" class="checkbox">
                 </div>
             </div>
-    </section>
+    </section> -->
 </body>
 </html>
