@@ -109,10 +109,12 @@ h4 {
 .filter-container {
     background-color: #f5f5f5;
     display: none;
-    padding: 20px;
+    padding: 10px;
     height: 550px;
     min-width: 250px;
-    margin-bottom: 10px; /*Kun for oversikt under produksjon*/
+    position: fixed;
+    width: 100%;
+    margin-top: -500px;
 }
 
 .rolle {
