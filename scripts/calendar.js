@@ -29,9 +29,9 @@ function listEvents (events) {
     output.innerHTML = myList;
 }
 
+// Filter -------------------------------------------------------------
 
-
-var filterbutton = document.querySelector(".filter-button")
+var filterbutton = document.querySelector(".filter-button");
 
 filterbutton.addEventListener("click",
 function showcontainer() {
@@ -45,7 +45,7 @@ function showcontainer() {
 );
 
 function showmaned() {
-    var showmnd = document.querySelector(".filter-måned")
+    var showmnd = document.querySelector(".filter-måned");
     if (showmnd.style.display === "none") {
         showmnd.style.display = "block";
         // console.log(showmaned);
@@ -53,3 +53,12 @@ function showmaned() {
         showmnd.style.display = "none";
     }
 };
+
+function showAnsatt() {
+    var showAns = document.querySelector(".ansatt-select");
+    if (showAns.style.display === "none") {
+        showAns.style.display = "block";
+    } else {
+        showAns.style.display = "block";
+    }
+}

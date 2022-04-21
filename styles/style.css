@@ -279,3 +279,7 @@ input[type=checkbox]:checked:after {
 .filter-måned {
     display: none;
 }
+
+.ansatt-select {
+    background-color: none;
+}
