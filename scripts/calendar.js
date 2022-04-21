@@ -64,9 +64,11 @@ function showAnsatt() {
 }
 
 function showStudent() {
+    var showAns = document.querySelector(".ansatt-select")
     var showStud = document.querySelector(".student-select");
     if (showStud.style.display === "none") {
-        showStud.style.display = "block";        
+        showStud.style.display = "block";
+        showAns.style.display = "none"    
     } else {
         showStud.style.display = "none"
     }
