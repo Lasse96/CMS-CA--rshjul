@@ -67,22 +67,12 @@ let filtermonth = () => {
 
 filterbutton.addEventListener("click",
 function showcontainer() {
-   if (showcont.style.display === "none") {
        showcont.style.display = "block";
-   } else {
-       showcont.style.display = "none";
-   }
-}
-);
+})
 
 function showmaned() {
-    if (showmnd.style.display === "none") {
         showmnd.style.display = "block";
-        // console.log(showmaned);
-    } else {
-        showmnd.style.display = "none";
-    }
-};
+}
 
 function backToMenu() {
     if (showmnd.style.display === "block") {
@@ -108,11 +98,7 @@ function backToMenu() {
 }
 
 function showAnsatt() {
-    if (showAns.style.display === "none") {
         showAns.style.display = "block";
-    } else {
-        showAns.style.display = "none";
-    }
 }
 
 function showStudent() {
@@ -126,43 +112,23 @@ function showStudent() {
 }
 
 function showStudie() {
-    if (showStudies.style.display === "none") {
         showStudies.style.display = "block";
-    } else {
-        showStudies.style.display = "none";
-    }
 }
 
 function showRolle() {
-    if (showRoller.style.display === "none") {
         showRoller.style.display = "block";
-    } else {
-        showRoller.style.display = "none";
-    }
 }
 
 function showStudiested() {
-    if (showSkole.style.display === "none") {
         showSkole.style.display = "block";
-    } else {
-        showSkole.style.display = "none";
-    }
 }
 
 function showType() {
-    if (showTyp.style.display === "none") {
         showTyp.style.display = "block";
-    } else {
-        showTyp.style.display = "none";
-    }
 }
 
 function showKvalArb() {
-    if (showKvalitet.style.display === "none") {
         showKvalitet.style.display = "block";
-    } else {
-        showKvalitet.style.display = "none";
-    }
 }
 
 // var filterbutton = document.querySelector(".filter-button");
