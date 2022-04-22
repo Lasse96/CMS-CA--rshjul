@@ -8,11 +8,12 @@ fetch(url)
      console.error('Error:', error);
 });
 
+
 function listEvents (events) {
     let myList = "";
     for (let event of events) {
         var date = (new Date(event.start_date.replace(/-/g, "/")));
-        // console.log(event);
+        console.log(event);
         myList += `
         <div class="cal-flex">
             <div class="calendarbox">
@@ -29,6 +30,7 @@ function listEvents (events) {
     output.innerHTML = myList;
 }
 
+<<<<<<< Updated upstream
 // Menu -------------------------------------------------------------
 
 const filterbutton = document.querySelector(".filter-button");
@@ -41,6 +43,28 @@ const showRoller = document.querySelector(".rolle-select");
 const showSkole = document.querySelector(".studiested-select");
 const showTyp = document.querySelector(".type-select");
 const showKvalitet = document.querySelector(".kvalitetsarbeid-select");
+=======
+let checkjan = document.querySelector("input#januar");
+let checkjun = document.querySelector("input#juni");
+
+let filtermonth = () => {
+    let filterArray = [];
+    if (checkjan.checked) filterArray.push("jan");
+    if (checkjun.checked) filterArray.push("jun");
+    let filteredMonths = events.filter((event) => {
+      
+      return filterArray.includes(event.start_date.toLowerCase());
+    });
+    
+    listEvents(filteredMonths);
+  
+  }
+  
+  checkjan.addEventListener('change', filtermonth);
+  checkjun.addEventListener('change', filtermonth);
+
+// Filter -------------------------------------------------------------
+>>>>>>> Stashed changes
 
 
 filterbutton.addEventListener("click",
@@ -99,6 +123,7 @@ function showStudent() {
         showAns.style.display = "none"    
     } else {
         showStud.style.display = "none"
+        showAns.style.display = "block"
     }
 }
 
