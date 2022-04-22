@@ -3,7 +3,7 @@ const url = "https://lassestrand.no/wp-json/tribe/events/v1/events";
 
 fetch(url)
  .then (respons => respons.json())
- .then (events => listEvents(events.events))
+ .then (data => listEvents(data.events))
  .catch((error) => {
      console.error('Error:', error);
 });
@@ -28,6 +28,24 @@ function listEvents (events) {
     }
     // console.log(myList);
     output.innerHTML = myList;
+
+    let checkjan = document.querySelector("input#januar");
+    let checkjun = document.querySelector("input#juni");
+    let filtermonth = () => {
+        let filterArray = [];
+        if (checkjan.checked) filterArray.push("januar");
+        if (checkjun.checked) filterArray.push("juni");
+        let filteredMonths = events.filter((event) => {
+          
+          return filterArray.includes(event.date.toLowerCase());
+        });
+        
+        listEvents(filteredMonths);
+      
+      }
+      
+      checkjan.addEventListener('change', filtermonth);
+      checkjun.addEventListener('change', filtermonth);
 }
 
 // Menu -------------------------------------------------------------
@@ -43,24 +61,8 @@ const showSkole = document.querySelector(".studiested-select");
 const showTyp = document.querySelector(".type-select");
 const showKvalitet = document.querySelector(".kvalitetsarbeid-select");
 
-let checkjan = document.querySelector("input#januar");
-let checkjun = document.querySelector("input#juni");
 
-let filtermonth = () => {
-    let filterArray = [];
-    if (checkjan.checked) filterArray.push("jan");
-    if (checkjun.checked) filterArray.push("jun");
-    let filteredMonths = events.filter((event) => {
-      
-      return filterArray.includes(event.start_date.toLowerCase());
-    });
-    
-    listEvents(filteredMonths);
-  
-  }
-  
-  checkjan.addEventListener('change', filtermonth);
-  checkjun.addEventListener('change', filtermonth);
+
 
 // Filter -------------------------------------------------------------
 
@@ -98,7 +100,7 @@ function backToMenu() {
 }
 
 function showAnsatt() {
-        showAns.style.display = "block";
+        showcont.style.display = "none";
 }
 
 function showStudent() {
