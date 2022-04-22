@@ -90,6 +90,7 @@ h4 {
     font-size: 1.1rem;
     text-transform: capitalize;
 }
+
 .cal-flex{
     display: flex;
     flex-direction: row;
@@ -180,7 +181,7 @@ h4 {
     background-color: transparent;
     color: black;
     border: none;
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: 10px 0;
     width: 100%;
     text-align: left;
@@ -229,20 +230,25 @@ h4 {
 
 .checkfilter{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
 }
 
 .checkbox{
-    margin: 15px 45px 0 0;
+    margin: 0 5px;
     border-radius: 0;
     border: 1px solid black;
 }
+
 
 input[type=checkbox] {
     position: relative;
     cursor: pointer;
 }
+
 input[type=checkbox]:before {
     content: "";
     display: block;
@@ -253,6 +259,7 @@ input[type=checkbox]:before {
     border-radius: 1px;
     background-color: white;
 }
+
 input[type=checkbox]:checked:after {
     content: "";
     display: block;
@@ -260,17 +267,17 @@ input[type=checkbox]:checked:after {
     height: 6px;
     border: solid black;
     position: absolute;
-    top: 3px;
-    left: 3px;
+    top: 4px;
+    left: 4px;
     background-color: black;
 }
 
 .back-btn {
     background-color: transparent;
     border: none;
-    font-size: 1rem;
     padding: 10px 0;
     text-align: right;
+    margin-bottom: 10px;
 }
 
 .back-btn::before {
