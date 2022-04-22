@@ -59,11 +59,16 @@ const showRoller = document.querySelector(".rolle-select");
 const showSkole = document.querySelector(".studiested-select");
 const showTyp = document.querySelector(".type-select");
 const showKvalitet = document.querySelector(".kvalitetsarbeid-select");
-
+const drag = document.querySelector(".drag")
 
 
 
 // Filter -------------------------------------------------------------
+
+function showNothing2() {
+    showcont.style.display = "none";
+    showAns.style.display ="none";
+}
 
 function showNothing() {
     showcont.style.display = "none";

@@ -122,7 +122,7 @@ h4 {
     margin: 20px;
 }
 
-.rolle {
+.rolle, .drag {
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -130,14 +130,16 @@ h4 {
     margin-top: 40px;
 }
 
-.rolle::after {
+.drag::after {
     content: '';
     height: 4px;
     width: 60px;
     background-color: rgb(206, 206, 206);
     position: absolute;
-    top: -25px;
+    top: -65px;
+    left: 96px;
     border-radius: 10px;
+    display: block;
 }
 
 .rolle > button {
