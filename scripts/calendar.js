@@ -1,12 +1,18 @@
 const output = document.querySelector(".divcalendar");
 const url = "https://lassestrand.no/wp-json/tribe/events/v1/events";
 
+let allEvents;
+
 fetch(url)
  .then (respons => respons.json())
  .then (data => listEvents(data.events))
  .catch((error) => {
      console.error('Error:', error);
 });
+
+allEvents = eventsd;
+
+console.log(allEvents);
 
 
 function listEvents (events) {
@@ -50,7 +56,6 @@ function listEvents (events) {
 
 // Menu -------------------------------------------------------------
 
-const filterbutton = document.querySelector(".filter-button");
 const showcont = document.querySelector(".filter-container");
 const showmnd = document.querySelector(".måned-select");
 const showStud = document.querySelector(".student-select");
@@ -67,10 +72,9 @@ const showKvalitet = document.querySelector(".kvalitetsarbeid-select");
 // Filter -------------------------------------------------------------
 
 
-filterbutton.addEventListener("click",
 function showcontainer() {
        showcont.style.display = "block";
-})
+}
 
 function showmaned() {
         showmnd.style.display = "block";
