@@ -118,6 +118,10 @@ h4 {
     box-shadow: 0 0 10px rgb(212, 212, 212);
 }
 
+.content-box {
+    margin: 20px;
+}
+
 .rolle {
     display: flex;
     justify-content: center;
@@ -233,14 +237,9 @@ h4 {
     border: 1px solid black;
 }
 
-.pfilter{
-    margin-left: 28px;
-    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;;
-}
-
 input[type=checkbox] {
     position: relative;
-      cursor: pointer;
+    cursor: pointer;
 }
 input[type=checkbox]:before {
     content: "";
