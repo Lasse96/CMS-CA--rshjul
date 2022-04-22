@@ -37,7 +37,7 @@ function listEvents (events) {
         if (checkjun.checked) filterArray.push("06");
         let filteredMonths = events.filter((event) => {
           
-          return filterArray.includes(event.start_date.toLowerCase());
+          return filterArray.includes(event.date.toLowerCase());
         });
         
         listEvents(filteredMonths);
@@ -65,6 +65,10 @@ const showKvalitet = document.querySelector(".kvalitetsarbeid-select");
 
 // Filter -------------------------------------------------------------
 
+function showNothing() {
+    showcont.style.display = "none";
+    showAns.style.display ="none";
+}
 
 function showcontainer() {
        showcont.style.display = "block";
@@ -98,7 +102,7 @@ function backToMenu() {
 }
 
 function showAnsatt() {
-        showcont.style.display = "none";
+        showAns.style.display = "block";
 }
 
 function showStudent() {
