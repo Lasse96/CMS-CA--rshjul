@@ -30,7 +30,6 @@ function listEvents (events) {
     output.innerHTML = myList;
 }
 
-<<<<<<< Updated upstream
 // Menu -------------------------------------------------------------
 
 const filterbutton = document.querySelector(".filter-button");
@@ -43,7 +42,7 @@ const showRoller = document.querySelector(".rolle-select");
 const showSkole = document.querySelector(".studiested-select");
 const showTyp = document.querySelector(".type-select");
 const showKvalitet = document.querySelector(".kvalitetsarbeid-select");
-=======
+
 let checkjan = document.querySelector("input#januar");
 let checkjun = document.querySelector("input#juni");
 
@@ -64,7 +63,6 @@ let filtermonth = () => {
   checkjun.addEventListener('change', filtermonth);
 
 // Filter -------------------------------------------------------------
->>>>>>> Stashed changes
 
 
 filterbutton.addEventListener("click",

@@ -108,13 +108,8 @@ h4 {
 
 .filter-container {
     background-color: #f5f5f5;
-<<<<<<< Updated upstream
-    display: none;
-    height: 600px;
-=======
     padding: 10px;
     height: 550px;
->>>>>>> Stashed changes
     min-width: 250px;
     position: fixed;
     bottom: 0;
