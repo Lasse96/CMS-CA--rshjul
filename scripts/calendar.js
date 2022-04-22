@@ -39,11 +39,11 @@ function listEvents (events) {
     let checkjun = document.querySelector("input#juni");
     let filtermonth = () => {
         let filterArray = [];
-        if (checkjan.checked) filterArray.push("januar");
-        if (checkjun.checked) filterArray.push("juni");
+        if (checkjan.checked) filterArray.push("01");
+        if (checkjun.checked) filterArray.push("06");
         let filteredMonths = events.filter((event) => {
           
-          return filterArray.includes(event.date.toLowerCase());
+          return filterArray.includes(event.start_date.toLowerCase());
         });
         
         listEvents(filteredMonths);
