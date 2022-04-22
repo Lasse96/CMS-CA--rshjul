@@ -1,18 +1,12 @@
 const output = document.querySelector(".divcalendar");
 const url = "https://lassestrand.no/wp-json/tribe/events/v1/events";
 
-let allEvents;
-
 fetch(url)
  .then (respons => respons.json())
  .then (data => listEvents(data.events))
  .catch((error) => {
      console.error('Error:', error);
 });
-
-allEvents = eventsd;
-
-console.log(allEvents);
 
 
 function listEvents (events) {
