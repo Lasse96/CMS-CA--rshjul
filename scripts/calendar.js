@@ -102,13 +102,8 @@ function showAnsatt() {
 }
 
 function showStudent() {
-    if (showStud.style.display === "none") {
         showStud.style.display = "block";
-        showAns.style.display = "none"    
-    } else {
-        showStud.style.display = "none"
-        showAns.style.display = "block"
-    }
+        showAns.style.display = "none";    
 }
 
 function showStudie() {
