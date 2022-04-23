@@ -1,9 +1,16 @@
 const output = document.querySelector(".divcalendar");
 const url = "https://lassestrand.no/wp-json/tribe/events/v1/events";
+var allEvents = [];
+var checkedMonths = [];
 
 fetch(url)
  .then (respons => respons.json())
- .then (data => listEvents(data.events))
+ .then (data => 
+    {
+        allEvents = data.events
+        listEvents(data.events)
+    })
+    
  .catch((error) => {
      console.error('Error:', error);
 });
@@ -13,7 +20,7 @@ function listEvents (events) {
     let myList = "";
     for (let event of events) {
         var date = (new Date(event.start_date.replace(/-/g, "/")));
-        console.log(event);
+        // console.log(event);
         myList += `
         <div class="cal-flex">
             <div class="calendarbox">
@@ -29,24 +36,50 @@ function listEvents (events) {
     // console.log(myList);
     output.innerHTML = myList;
 
-    let checkjan = document.querySelector("input#januar");
-    let checkjun = document.querySelector("input#juni");
-    let filtermonth = () => {
-        let filterArray = [];
-        if (checkjan.checked) filterArray.push("01");
-        if (checkjun.checked) filterArray.push("06");
-        let filteredMonths = events.filter((event) => {
-          
-          return filterArray.includes(event.date.toLowerCase());
-        });
-        
-        listEvents(filteredMonths);
-      
-      }
-      
-      checkjan.addEventListener('change', filtermonth);
-      checkjun.addEventListener('change', filtermonth);
+    
 }
+
+function filterChange(e){
+    var monthNumber = e.target.name;
+    if (e.target.checked){
+        checkedMonths.push(monthNumber);
+    } else {
+        for (let index = 0; index < checkedMonths.length; index++) {
+            if (checkedMonths[index] == monthNumber){
+                checkedMonths.splice(index, 1);
+            }
+        }
+    }
+    if (checkedMonths.length == 0){
+        listEvents(allEvents);
+    } else {
+
+    let filteredEvents = allEvents.filter((event) => {
+        if (checkedMonths.includes(event.start_date_details.month)){
+            return true;
+        }
+        else {
+            return false;
+        }
+        });
+
+        listEvents(filteredEvents);
+    }
+}
+
+document.querySelector("input#januar").addEventListener('change', filterChange);
+document.querySelector("input#februar").addEventListener('change', filterChange);
+document.querySelector("input#mars").addEventListener('change', filterChange);
+document.querySelector("input#april").addEventListener('change', filterChange);
+document.querySelector("input#mai").addEventListener('change', filterChange);
+document.querySelector("input#juni").addEventListener('change', filterChange);
+document.querySelector("input#juli").addEventListener('change', filterChange);
+document.querySelector("input#august").addEventListener('change', filterChange);
+document.querySelector("input#september").addEventListener('change', filterChange);
+document.querySelector("input#oktober").addEventListener('change', filterChange);
+document.querySelector("input#november").addEventListener('change', filterChange);
+document.querySelector("input#desember").addEventListener('change', filterChange);
+
 
 // Menu -------------------------------------------------------------
 
