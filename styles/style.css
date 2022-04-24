@@ -18,7 +18,8 @@
 
 .p1,
 .p2,
-.toptxt {
+.toptxt,
+h1 {
     font-family: var(--font1);
 }
 
@@ -28,6 +29,10 @@ h2,
 h3,
 h4 {
     font-family: var(--font2);
+}
+
+a{
+    color: black;
 }
 
 .toptxt{
@@ -283,4 +288,54 @@ input[type=checkbox]:checked:after {
 .back-btn::before {
     content: "<";
     margin-right: 2px;
+}
+
+/* Les mer */
+
+.detailsOutput {
+    padding: 10px;
+    font-size: 1.1rem;
+}
+
+.detailsOutput h1 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+ 
+.desc { 
+    margin: 20px 0;
+    line-height: 1.4rem;
+}
+
+#backBtn {
+    text-decoration: none;
+    color: black;
+    margin: 10px;
+    float: right;
+    font-size: 1.2rem;
+}
+
+#backBtn:before {
+    content: '<';
+    padding: 5px;
+}
+
+.date {
+    font-size: 1.4rem;
+    position: relative;
+}
+
+.date::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: rgb(172, 172, 172);
+    bottom: -10px;
+    left: 0;
+}
+
+.detailsOutput a {
+    margin: 10px 0;
+    display: block;
 }

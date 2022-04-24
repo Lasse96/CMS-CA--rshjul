@@ -29,14 +29,13 @@ function listEvents (events) {
             </div>
             <div class="cal-title">
                 <h4>${event.title}</h4>
-                <p>${event.description}</p>
+                <a href="./lesmer.html?id=${event.id}">Les Mer</a>
             </div>
         </div>`
     }
     // console.log(myList);
     output.innerHTML = myList;
-
-    
+   
 }
 
 function filterChange(e){
