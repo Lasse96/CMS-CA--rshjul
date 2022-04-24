@@ -79,7 +79,6 @@ document.querySelector("input#oktober").addEventListener('change', filterChange)
 document.querySelector("input#november").addEventListener('change', filterChange);
 document.querySelector("input#desember").addEventListener('change', filterChange);
 
-
 // Menu -------------------------------------------------------------
 
 const showcont = document.querySelector(".filter-container");
@@ -91,7 +90,7 @@ const showRoller = document.querySelector(".rolle-select");
 const showSkole = document.querySelector(".studiested-select");
 const showTyp = document.querySelector(".type-select");
 const showKvalitet = document.querySelector(".kvalitetsarbeid-select");
-const drag = document.querySelector(".drag")
+const drag = document.querySelector(".drag");
 
 
 
