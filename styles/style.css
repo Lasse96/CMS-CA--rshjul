@@ -257,8 +257,8 @@ input[type=checkbox]:checked:after {
     height: 6px;
     border: solid black;
     position: absolute;
-    top: 3px;
-    left: 3px;
+    top: 4px;
+    left: 4px;
     background-color: black;
 }
 

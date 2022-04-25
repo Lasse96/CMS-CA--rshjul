@@ -26,5 +26,5 @@ function listDetails(event) {
     <h1>${event.title}</h1>
     <p class="date">${event.start_date_details.day} ${date.toLocaleString('default', { month: 'short' })}</p>
     <div class="desc">${event.description}</div>
-    <p>${event.venue.address}, ${event.venue.zip} ${event.venue.city}</p>`
+    <p>${event.venue.address} , ${event.venue.zip} ${event.venue.city}</p>`
 }
