@@ -171,6 +171,18 @@ function runFilter(){
     listEvents(eventsFiltered);
 }
 
+function reset(){
+    checkedMonths = [];
+    checkedSted = [];
+    checkedCategory = [];
+    checkedStudie = [];
+    checkedRoller = [];
+    checkedKval = [];
+
+    eventsFiltered = allEvents;
+    listEvents(allEvents)
+}
+
 
 document.querySelector("input#januar").addEventListener('change', filterMonths);
 document.querySelector("input#februar").addEventListener('change', filterMonths);
