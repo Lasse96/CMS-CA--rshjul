@@ -40,7 +40,7 @@ function listEvents (events) {
    
 }
 
-function filterChange(e){
+function filterMonths(e){
     var monthNumber = e.target.name;
     if (e.target.checked){
         checkedMonths.push(monthNumber);
@@ -55,7 +55,7 @@ function filterChange(e){
         listEvents(allEvents);
     } else {
 
-    let filteredEvents = allEvents.filter((event) => {
+    let filteredMonths = allEvents.filter((event) => {
         if (checkedMonths.includes(event.start_date_details.month)){
             return true;
         }
@@ -64,12 +64,12 @@ function filterChange(e){
         }
         });
 
-        listEvents(filteredEvents);
+        listEvents(filteredMonths);
         
     }
 }
 
-function filterChanges(e){
+function filterCity(e){
     var studieSted = e.target.name;
     if (e.target.checked){
         checkedSted.push(studieSted);
@@ -84,7 +84,7 @@ function filterChanges(e){
         listEvents(allEvents);
     } else {
 
-    let filteredEventss = allEvents.filter((event) => {
+    let filteredCity = allEvents.filter((event) => {
         if (event.venue.city != null && checkedSted.includes(event.venue.city.toLowerCase())){
             return true;
         }
@@ -93,24 +93,56 @@ function filterChanges(e){
         }
         });
 
-        listEvents(filteredEventss);
+        listEvents(filteredCity);
     }
 }
 
+// function filterCity(e){
+//     var studieSted = e.target.name;
+//     if (e.target.checked){
+//         checkedSted.push(studieSted);
+//     } else {
+//         for (let index = 0; index < checkedSted.length; index++) {
+//             if (checkedSted[index] == studieSted){
+//                 checkedSted.splice(index, 1);
+//             }
+//         }
+//     }
+//     if (checkedSted.length == 0){
+//         listEvents(allEvents);
+//     } else {
 
-document.querySelector("input#januar").addEventListener('change', filterChange);
-document.querySelector("input#februar").addEventListener('change', filterChange);
-document.querySelector("input#mars").addEventListener('change', filterChange);
-document.querySelector("input#april").addEventListener('change', filterChange);
-document.querySelector("input#mai").addEventListener('change', filterChange);
-document.querySelector("input#juni").addEventListener('change', filterChange);
-document.querySelector("input#juli").addEventListener('change', filterChange);
-document.querySelector("input#august").addEventListener('change', filterChange);
-document.querySelector("input#september").addEventListener('change', filterChange);
-document.querySelector("input#oktober").addEventListener('change', filterChange);
-document.querySelector("input#november").addEventListener('change', filterChange);
-document.querySelector("input#desember").addEventListener('change', filterChange);
-document.querySelector("input#bergen").addEventListener('change', filterChanges);
+//     let filteredCity = allEvents.filter((event) => {
+//         if (event.venue.city != null && checkedSted.includes(event.venue.city.toLowerCase())){
+//             return true;
+//         }
+//         else{
+//             return false;
+//         }
+//         });
+
+//         listEvents(filteredCity);
+//     }
+// }
+
+
+document.querySelector("input#januar").addEventListener('change', filterMonths);
+document.querySelector("input#februar").addEventListener('change', filterMonths);
+document.querySelector("input#mars").addEventListener('change', filterMonths);
+document.querySelector("input#april").addEventListener('change', filterMonths);
+document.querySelector("input#mai").addEventListener('change', filterMonths);
+document.querySelector("input#juni").addEventListener('change', filterMonths);
+document.querySelector("input#juli").addEventListener('change', filterMonths);
+document.querySelector("input#august").addEventListener('change', filterMonths);
+document.querySelector("input#september").addEventListener('change', filterMonths);
+document.querySelector("input#oktober").addEventListener('change', filterMonths);
+document.querySelector("input#november").addEventListener('change', filterMonths);
+document.querySelector("input#desember").addEventListener('change', filterMonths);
+document.querySelector("input#bergen").addEventListener('change', filterCity);
+document.querySelector("input#oslo").addEventListener('change', filterCity);
+document.querySelector("input#stavanger").addEventListener('change', filterCity);
+document.querySelector("input#kristiansand").addEventListener('change', filterCity);
+document.querySelector("input#nettstudier").addEventListener('change', filterCity);
 
 // Menu -------------------------------------------------------------
 
