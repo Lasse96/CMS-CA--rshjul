@@ -110,15 +110,24 @@
         <section class="filter-container rolle-select">
             <div class="content-box">
                 <button class="back-btn" onclick="backToMenu()">Tilbake</button>
-                <button class="selection-btn">Rektor</button>
-                <button class="selection-btn">Prorektor (stedbasert utdanning)</button>
-                <button class="selection-btn">Prorektor (nettbasert utdanning)</button>
-                <button class="selection-btn">Leder programutvikling</button>
-                <button class="selection-btn">Leder pedagogisk utvikling</button>
-                <button class="selection-btn">Linjeleder</button>
-                <button class="selection-btn">Faglig ansvarlig</button>
-                <button class="selection-btn">Emneansvarlig</button>
-                <button class="selection-btn">Faglærer</button>
+                <input type="checkbox" name="rektor" id="rektor" class="selection-btn checkfilter">
+                <label for="rektor">Rektor</label>
+                <input type="checkbox" name="stedpro" id="stedpro" class="selection-btn">
+                <label for="stedpro">Prorektor (stedbasert utdanning)</label>
+                <input type="checkbox" name="nettpro" id="nettpro" class="selection-btn">
+                <label for="nettpro">Prorektor (nettbasert utdanning)</label>
+                <input type="checkbox" name="ledprog" id="ledprog" class="selection-btn">
+                <label for="ledprog">Leder programutvikling</label>
+                <input type="checkbox" name="ledped" id="ledped" class="selection-btn">
+                <label for="ledped">Leder pedagogisk utvikling</label>
+                <input type="checkbox" name="Linjeleder" id="Linjeleder" class="selection-btn">
+                <label for="Linjeleder">Linjeleder</label>
+                <input type="checkbox" name="faglig" id="faglig" class="selection-btn">
+                <label for="faglig">Faglig ansvarlig</label>
+                <input type="checkbox" name="Emneansvarlig" id="Emneansvarlig" class="selection-btn">
+                <label for="Emneansvarlig">Emneansvarlig</label>
+                <input type="checkbox" name="Faglærer" id="Faglærer" class="selection-btn">
+                <label for="Faglærer">Faglærer</label>
             </div>
         </section>
     
@@ -204,24 +213,24 @@
             <div class="content-box">
                 <button class="back-btn" onclick="backToMenu()">Tilbake</button>
                 <div class="checkfilter">
-                    <p class="pfilter">Oslo</p>
                     <input type="checkbox" name="oslo" id="oslo" class="checkbox">
+                    <label for="oslo">Oslo</label>
                 </div>
                 <div class="checkfilter">
-                    <p class="pfilter">Bergen</p>
                     <input type="checkbox" name="bergen" id="bergen" class="checkbox">
+                    <label for="bergen">Bergen</label>
                 </div>
                 <div class="checkfilter">
-                    <p class="pfilter">Stavanger</p>
                     <input type="checkbox" name="stavanger" id="stavanger" class="checkbox">
+                    <label for="stavanger">Stavanger</label>
                 </div>
                 <div class="checkfilter">
-                    <p class="pfilter">Kristiansand</p>
                     <input type="checkbox" name="kristiansand" id="kristiansand" class="checkbox">
+                    <label for="kristiansand">Kristiansand</label>
                 </div>
                 <div class="checkfilter">
-                    <p class="pfilter">Nettstudier</p>
                     <input type="checkbox" name="nettstudier" id="nettstudier" class="checkbox">
+                    <label for="nettstudier">Nettstudier</label>
                 </div>
             </div>
         </section>

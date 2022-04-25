@@ -2,6 +2,7 @@ const output = document.querySelector(".divcalendar");
 const url = "https://lassestrand.no/wp-json/tribe/events/v1/events";
 var allEvents = [];
 var checkedMonths = [];
+var checkedSted = [];
 
 fetch(url)
  .then (respons => respons.json())
@@ -9,6 +10,7 @@ fetch(url)
     {
         allEvents = data.events
         listEvents(data.events)
+        console.log(allEvents);
     })
     
  .catch((error) => {
@@ -20,7 +22,7 @@ function listEvents (events) {
     let myList = "";
     for (let event of events) {
         var date = (new Date(event.start_date.replace(/-/g, "/")));
-        // console.log(event);
+        console.log(event.venue.city);
         myList += `
         <div class="cal-flex">
             <div class="calendarbox">
@@ -63,8 +65,39 @@ function filterChange(e){
         });
 
         listEvents(filteredEvents);
+        
     }
 }
+
+function filterChanges(e){
+    var studieSted = e.target.name;
+    if (e.target.checked){
+        checkedSted.push(studieSted);
+       debugger;
+    } else {
+        for (let index = 0; index < checkedSted.length; index++) {
+            if (checkedSted[index] == studieSted){
+                checkedSted.splice(index, 1);
+            }
+        }
+    }
+    if (checkedSted.length == 0){
+        listEvents(allEvents);
+    } else {
+
+    let filteredEventss = allEvents.filter((event) => {
+        if (checkedSted.includes(event.excerpt)){
+            return true;
+        }
+        else {
+            return false;
+        }
+        });
+
+        listEvents(filteredEventss);
+    }
+}
+
 
 document.querySelector("input#januar").addEventListener('change', filterChange);
 document.querySelector("input#februar").addEventListener('change', filterChange);
@@ -78,6 +111,7 @@ document.querySelector("input#september").addEventListener('change', filterChang
 document.querySelector("input#oktober").addEventListener('change', filterChange);
 document.querySelector("input#november").addEventListener('change', filterChange);
 document.querySelector("input#desember").addEventListener('change', filterChange);
+document.querySelector("input#bergen").addEventListener('change', filterChanges);
 
 // Menu -------------------------------------------------------------
 
@@ -165,46 +199,3 @@ function showType() {
 function showKvalArb() {
         showKvalitet.style.display = "block";
 }
-
-// var filterbutton = document.querySelector(".filter-button");
-
-// filterbutton.addEventListener("click",
-// function showcontainer() {
-//    var showcont = document.querySelector(".filter-container");
-//    if (showcont.style.display === "none") {
-//        showcont.style.display = "block";
-//    } else {
-//        showcont.style.display = "none";
-//    }
-// }
-// );
-
-// function showmaned() {
-//     var showmnd = document.querySelector(".filter-måned");
-//     if (showmnd.style.display === "none") {
-//         showmnd.style.display = "block";
-//         // console.log(showmaned);
-//     } else {
-//         showmnd.style.display = "none";
-//     }
-// };
-
-// function showAnsatt() {
-//     var showAns = document.querySelector(".ansatt-select");
-//     if (showAns.style.display === "none") {
-//         showAns.style.display = "block";
-//     } else {
-//         showAns.style.display = "none";
-//     }
-// }
-
-// function showStudent() {
-//     var showAns = document.querySelector(".ansatt-select")
-//     var showStud = document.querySelector(".student-select");
-//     if (showStud.style.display === "none") {
-//         showStud.style.display = "block";
-//         showAns.style.display = "none"    
-//     } else {
-//         showStud.style.display = "none"
-//     }
-// }
