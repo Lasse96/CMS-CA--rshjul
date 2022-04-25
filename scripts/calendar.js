@@ -73,6 +73,10 @@ function filterChanges(e){
     var studieSted = e.target.name;
     if (e.target.checked){
         checkedSted.push(studieSted);
+<<<<<<< Updated upstream
+=======
+    //    debugger;
+>>>>>>> Stashed changes
     } else {
         for (let index = 0; index < checkedSted.length; index++) {
             if (checkedSted[index] == studieSted){
@@ -85,7 +89,12 @@ function filterChanges(e){
     } else {
 
     let filteredEventss = allEvents.filter((event) => {
+<<<<<<< Updated upstream
         if (event.venue.city != null && checkedSted.includes(event.venue.city.toLowerCase())){
+=======
+        console.log(event.venue.city);
+        if (checkedSted.includes(event.venue.city.toLowerCase())){
+>>>>>>> Stashed changes
             return true;
         }
         else{
