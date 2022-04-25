@@ -73,7 +73,6 @@ function filterChanges(e){
     var studieSted = e.target.name;
     if (e.target.checked){
         checkedSted.push(studieSted);
-       debugger;
     } else {
         for (let index = 0; index < checkedSted.length; index++) {
             if (checkedSted[index] == studieSted){
@@ -86,10 +85,10 @@ function filterChanges(e){
     } else {
 
     let filteredEventss = allEvents.filter((event) => {
-        if (checkedSted.includes(event.venue.city.toLowerCase())){
+        if (event.venue.city != null && checkedSted.includes(event.venue.city.toLowerCase())){
             return true;
         }
-        else {
+        else{
             return false;
         }
         });
