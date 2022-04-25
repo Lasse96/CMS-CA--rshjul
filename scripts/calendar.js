@@ -23,7 +23,7 @@ function listEvents (events) {
     let myList = "";
     for (let event of events) {
         var date = (new Date(event.start_date.replace(/-/g, "/")));
-        console.log(event.venue.city);
+        // console.log(event.venue.city);
         myList += `
         <div class="cal-flex">
             <div class="calendarbox">
@@ -35,6 +35,7 @@ function listEvents (events) {
                 <a href="./lesmer.html?id=${event.id}">Les Mer</a>
             </div>
         </div>`
+
     }
     // console.log(myList);
     output.innerHTML = myList;
