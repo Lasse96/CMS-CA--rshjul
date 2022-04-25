@@ -1,9 +1,13 @@
 const output = document.querySelector(".divcalendar");
 const url = "https://lassestrand.no/wp-json/tribe/events/v1/events";
 var allEvents = [];
+var eventsFiltered = [];
 var checkedMonths = [];
 var checkedSted = [];
-var checkedType = [];
+var checkedCategory = [];
+var checkedStudie = [];
+var checkedRoller = [];
+var checkedKval = [];
 
 fetch(url)
  .then (respons => respons.json())
@@ -53,22 +57,7 @@ function filterMonths(e){
             }
         }
     }
-    if (checkedMonths.length == 0){
-        listEvents(allEvents);
-    } else {
-
-    let filteredMonths = allEvents.filter((event) => {
-        if (checkedMonths.includes(event.start_date_details.month)){
-            return true;
-        }
-        else {
-            return false;
-        }
-        });
-
-        listEvents(filteredMonths);
-        
-    }
+    runFilter();
 }
 
 function filterCity(e){
@@ -82,49 +71,104 @@ function filterCity(e){
             }
         }
     }
-    if (checkedSted.length == 0){
-        listEvents(allEvents);
-    } else {
-
-    let filteredCity = allEvents.filter((event) => {
-        if (event.venue.city != null && checkedSted.includes(event.venue.city.toLowerCase())){
-            return true;
-        }
-        else{
-            return false;
-        }
-        });
-
-        listEvents(filteredCity);
-    }
+    runFilter();
 }
 
 function filterType(e){
     var type = e.target.name;
     if (e.target.checked){
-        checkedType.push(type);
+        checkedCategory.push(type.toLowerCase());
     } else {
-        for (let index = 0; index < checkedType.length; index++) {
-            if (checkedType[index] == type){
-                checkedType.splice(index, 1);
+        for (let index = 0; index < checkedCategory.length; index++) {
+            if (checkedCategory[index] == type){
+                checkedCategory.splice(index, 1);
             }
         }
     }
-    if (checkedType.length == 0){
-        listEvents(allEvents);
+    runFilter();
+}
+
+function filterStudie(e){
+    var studie = e.target.name;
+    if (e.target.checked){
+        checkedCategory.push(studie.toLowerCase());
     } else {
-
-    let filteredType = allEvents.filter((event) => {
-        if (event.categories.filter(category => category.name != null && category.name.toLowerCase() === type.toLowerCase()).length > 0) {
-            return true;
-          }
-        else{
-            return false;
+        for (let index = 0; index < checkedCategory.length; index++) {
+            if (checkedCategory[index] == studie){
+                checkedCategory.splice(index, 1);
+            }
         }
-        });
-
-        listEvents(filteredType);
     }
+    runFilter();
+}
+
+function filterRoller(e){
+    var roller = e.target.name;
+    if (e.target.checked){
+        checkedCategory.push(roller.toLowerCase());
+    } else {
+        for (let index = 0; index < checkedCategory.length; index++) {
+            if (checkedCategory[index] == roller){
+                checkedCategory.splice(index, 1);
+            }
+        }
+    }
+    runFilter();
+}
+
+function filterKvalitet(e){
+    var kvalitet = e.target.name;
+    if (e.target.checked){
+        checkedCategory.push(kvalitet.toLowerCase());
+    } else {
+        for (let index = 0; index < checkedCategory.length; index++) {
+            if (checkedCategory[index] == kvalitet){
+                checkedCategory.splice(index, 1);
+            }
+        }
+    }
+    runFilter();
+}
+
+function runFilter(){
+    eventsFiltered = allEvents;
+
+    // Filter by months
+    if (checkedMonths.length > 0){
+        eventsFiltered = eventsFiltered.filter((event) => {
+            if (checkedMonths.includes(event.start_date_details.month)){
+                return true;
+            }
+            else {
+                return false;
+            }
+        });        
+    } 
+
+    // Filter by city
+    if (checkedSted.length > 0){
+        eventsFiltered = eventsFiltered.filter((event) => {
+            if (event.venue.city != null && checkedSted.includes(event.venue.city.toLowerCase())){
+                return true;
+            }
+            else{
+                return false;
+            }
+        });
+    }
+
+    // Filter by type, studie, roller og kvalitet
+    if (checkedCategory.length > 0){
+        eventsFiltered = eventsFiltered.filter((event) => {
+            if (event.categories.some(category => category.name != null && checkedCategory.includes(category.name.toLowerCase()))) {
+                return true;
+              }
+            else{
+                return false;
+            }
+        });
+    }
+    listEvents(eventsFiltered);
 }
 
 
@@ -149,6 +193,33 @@ document.querySelector("input#nettstudier").addEventListener('change', filterCit
 
 document.querySelector("input#arrangementer").addEventListener('change', filterType);
 document.querySelector("input#frister").addEventListener('change', filterType);
+
+document.querySelector("input#frontend").addEventListener('change', filterStudie);
+document.querySelector("input#backend").addEventListener('change', filterStudie);
+document.querySelector("input#dataAnalyst").addEventListener('change', filterStudie);
+document.querySelector("input#UX-Design").addEventListener('change', filterStudie);
+document.querySelector("input#UI-Design").addEventListener('change', filterStudie);
+document.querySelector("input#grafiskDesign").addEventListener('change', filterStudie);
+document.querySelector("input#filmproduksjon").addEventListener('change', filterStudie);
+document.querySelector("input#digitalPrototyping").addEventListener('change', filterStudie);
+document.querySelector("input#tekniskDesign").addEventListener('change', filterStudie);
+document.querySelector("input#digitalMarkedsføring").addEventListener('change', filterStudie);
+document.querySelector("input#spillTek").addEventListener('change', filterStudie);
+
+document.querySelector("input#rektor").addEventListener('change', filterRoller);
+document.querySelector("input#stedPro").addEventListener('change', filterRoller);
+document.querySelector("input#nettPro").addEventListener('change', filterRoller);
+document.querySelector("input#ledPro").addEventListener('change', filterRoller);
+document.querySelector("input#ledPed").addEventListener('change', filterRoller);
+document.querySelector("input#linjeleder").addEventListener('change', filterRoller);
+document.querySelector("input#fagAns").addEventListener('change', filterRoller);
+document.querySelector("input#emneansvarlig").addEventListener('change', filterRoller);
+document.querySelector("input#faglærer").addEventListener('change', filterRoller);
+
+document.querySelector("input#styrebeslutninger").addEventListener('change', filterKvalitet);
+document.querySelector("input#datainnhenting").addEventListener('change', filterKvalitet);
+document.querySelector("input#kvalRap").addEventListener('change', filterKvalitet);
+document.querySelector("input#rekUt").addEventListener('change', filterKvalitet);
 
 // Menu -------------------------------------------------------------
 
