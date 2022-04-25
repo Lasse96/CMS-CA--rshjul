@@ -103,7 +103,6 @@ function filterType(e){
     var type = e.target.name;
     if (e.target.checked){
         checkedType.push(type);
-        debugger;
     } else {
         for (let index = 0; index < checkedType.length; index++) {
             if (checkedType[index] == type){
@@ -116,9 +115,9 @@ function filterType(e){
     } else {
 
     let filteredType = allEvents.filter((event) => {
-        if (event.tags.name != null && checkedType.includes(event.tags.name.toLowerCase())){
+        if (event.categories.filter(category => category.name != null && category.name.toLowerCase() === type.toLowerCase()).length > 0) {
             return true;
-        }
+          }
         else{
             return false;
         }
