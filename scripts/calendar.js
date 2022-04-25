@@ -3,6 +3,7 @@ const url = "https://lassestrand.no/wp-json/tribe/events/v1/events";
 var allEvents = [];
 var checkedMonths = [];
 var checkedSted = [];
+var checkedType = [];
 
 fetch(url)
  .then (respons => respons.json())
@@ -97,33 +98,34 @@ function filterCity(e){
     }
 }
 
-// function filterCity(e){
-//     var studieSted = e.target.name;
-//     if (e.target.checked){
-//         checkedSted.push(studieSted);
-//     } else {
-//         for (let index = 0; index < checkedSted.length; index++) {
-//             if (checkedSted[index] == studieSted){
-//                 checkedSted.splice(index, 1);
-//             }
-//         }
-//     }
-//     if (checkedSted.length == 0){
-//         listEvents(allEvents);
-//     } else {
+function filterType(e){
+    var type = e.target.name;
+    if (e.target.checked){
+        checkedType.push(type);
+        debugger;
+    } else {
+        for (let index = 0; index < checkedType.length; index++) {
+            if (checkedType[index] == type){
+                checkedType.splice(index, 1);
+            }
+        }
+    }
+    if (checkedType.length == 0){
+        listEvents(allEvents);
+    } else {
 
-//     let filteredCity = allEvents.filter((event) => {
-//         if (event.venue.city != null && checkedSted.includes(event.venue.city.toLowerCase())){
-//             return true;
-//         }
-//         else{
-//             return false;
-//         }
-//         });
+    let filteredType = allEvents.filter((event) => {
+        if (event.tags.name != null && checkedType.includes(event.tags.name.toLowerCase())){
+            return true;
+        }
+        else{
+            return false;
+        }
+        });
 
-//         listEvents(filteredCity);
-//     }
-// }
+        listEvents(filteredType);
+    }
+}
 
 
 document.querySelector("input#januar").addEventListener('change', filterMonths);
@@ -138,11 +140,15 @@ document.querySelector("input#september").addEventListener('change', filterMonth
 document.querySelector("input#oktober").addEventListener('change', filterMonths);
 document.querySelector("input#november").addEventListener('change', filterMonths);
 document.querySelector("input#desember").addEventListener('change', filterMonths);
+
 document.querySelector("input#bergen").addEventListener('change', filterCity);
 document.querySelector("input#oslo").addEventListener('change', filterCity);
 document.querySelector("input#stavanger").addEventListener('change', filterCity);
 document.querySelector("input#kristiansand").addEventListener('change', filterCity);
 document.querySelector("input#nettstudier").addEventListener('change', filterCity);
+
+document.querySelector("input#arrangementer").addEventListener('change', filterType);
+document.querySelector("input#frister").addEventListener('change', filterType);
 
 // Menu -------------------------------------------------------------
 
