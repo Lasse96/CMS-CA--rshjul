@@ -86,7 +86,7 @@ function filterChanges(e){
     } else {
 
     let filteredEventss = allEvents.filter((event) => {
-        if (checkedSted.includes(event.excerpt)){
+        if (checkedSted.includes(event.venue.city.toLowerCase())){
             return true;
         }
         else {
